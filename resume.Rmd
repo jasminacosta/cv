@@ -1,6 +1,6 @@
 ---
-title: Nick Strayer's Resume"
-author: Nick Strayer
+title: Jasmin Acosta's Resume"
+author: Jasmin Acosta
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -34,8 +34,9 @@ position_data <- read_csv('positions.csv') %>%
   mutate(
     # Build some custom sections by collapsing others
     section = case_when(
-      section %in% c('research_positions', 'industry_positions') ~ 'positions', 
-      section %in% c('data_science_writings', 'by_me_press') ~ 'writings',
+      section %in% c('industry_positions') ~ 'positions', 
+      section %in% c('blog_articles', 'academic_writings') ~ 'writings',
+      section %in% c('skills') ~ 'skills',
       TRUE ~ section
     )
   ) 
@@ -54,11 +55,9 @@ Contact {#contact}
 
 
 
-- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
-- <i class="fa fa-twitter"></i> NicholasStrayer
-- <i class="fa fa-github"></i> github.com/nstrayer
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
-- <i class="fa fa-phone"></i> (734) 645-0110
+- <i class="fa fa-envelope"></i> jasminbethany1234@gmail.com
+- <i class="fa fa-github"></i> github.com/jasminacosta
+- <i class="fa fa-phone"></i> (951) 691-3051
 
 
 
@@ -69,13 +68,13 @@ Language Skills {#skills}
 ```{r}
 skills <- tribble(
   ~skill,               ~level,
-  "R",                  5,
-  "Javascript (d3.js)", 4.5,
-  "Python",             4,
-  "Bash",               3.5,
-  "SQL",                3,
-  "C++",                3,
-  "AWK",                3
+  "R",                  3,
+  "Javascript (d3.js)", 0,
+  "Python",             0,
+  "Bash",               0,
+  "SQL",                1,
+  "C++",                0,
+  "AWK",                0
 )
 build_skill_bars(skills)
 ```
@@ -85,7 +84,7 @@ build_skill_bars(skills)
 Open Source Contributions {#open-source}
 --------------------------------------------------------------------------------
 
-All projects available at `github.com/nstrayer/<name>`
+All projects available at `github.com/jasminacosta/<name>`
 
 
 - `shinysense`: R package to use sensor data in Shiny apps
@@ -96,7 +95,7 @@ All projects available at `github.com/nstrayer/<name>`
 More info {#more-info}
 --------------------------------------------------------------------------------
 
-See full CV at nickstrayer.me/cv for more complete list of positions and publications.
+See full CV at jasminacosta/cv for more complete list of positions and publications.
 
 
 Disclaimer {#disclaimer}
@@ -104,7 +103,7 @@ Disclaimer {#disclaimer}
 
 Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
 
-Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+Source code: [github.com/jasminacosta/cv](https://github.com/jasminacosta/cv).
 
 Last updated on `r Sys.Date()`.
 
@@ -114,13 +113,13 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Jasmin Acosta {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
+intro_text <- "I am currently working as a writer, assisstant production coordinator, and I am a graduate student at Arizona State Univeristy studying Program Evaultuion and Data Analytics. My time as an Undergradute student studying English has provided me with opportunities to explore the world around me, and to begin making a difference in my community through writing through carefully analyzing my usage of word choices to convery an overall message. Where now I want to apply these skills through combining my background in English with data analytics. 
 
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
+Currently, I aspire to use my unique set of skills to begin analyzing data to make conclusions about the information that is provided, and to build tools using visualization and machine learning to help people explore and understand their data through being able to use data as a means to tell a story. 
 "
 
 
@@ -153,4 +152,10 @@ Selected Writing {data-icon=newspaper}
 position_data %>% print_section('writings')
 ```
 
+Skills {data-icon=newspaper}
+--------------------------------------------------------------------------------
 
+
+```{r}
+position_data %>% print_section('skills')
+```
